@@ -1,6 +1,8 @@
 package com.company.thread.notify;
 
 public class Main {
+    private static final Object obj = new Object();
+
     public static void main(String[] args) {
         Thread[] rs = new Thread[10];
         for(int i = 0;i < 10;i++) {
@@ -21,7 +23,6 @@ public class Main {
         }
     }
 
-    private static final Object obj = new Object();
     static class R implements Runnable {
         int i;
 
@@ -35,7 +36,7 @@ public class Main {
                     System.out.println("线程->  " + i + " 等待中");
                     obj.wait();
                     System.out.println("线程->  " + i + " 在运行了");
-                    Thread.sleep(30000);
+                    Thread.sleep(3000);
                 }
             } catch(Exception e) {
                 e.printStackTrace();
