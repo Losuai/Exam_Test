@@ -3,7 +3,6 @@ package com.company.proxy;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
-import java.util.Arrays;
 
 public class DynamicProxyHandler implements InvocationHandler {
     //target object
@@ -26,7 +25,6 @@ public class DynamicProxyHandler implements InvocationHandler {
         System.out.println("before dynamic proxy ...");
         Object rs = method.invoke(targetObject, args);
         System.out.println("after dynamic proxy ...");
-        Arrays.sort();
         return rs;
     }
 }
